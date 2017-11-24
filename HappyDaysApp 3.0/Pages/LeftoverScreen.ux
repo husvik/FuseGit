@@ -1,0 +1,52 @@
+<Page ux:Class="LeftoverScreen">
+    <Router ux:Dependency="router" />
+    <JavaScript File="LeftoverScreen.js" />
+
+    <DockPanel>
+        <BackgroundColor/>
+
+        <!--Top panel-->
+		<StackPanel Dock="Top" >
+            <Panel  Height="40" Alignment="Top" Margin="20">
+                
+            
+			<Text Value="Resteforslag" Color="#fff" Alignment="Center" FontSize="25" />
+            <Panel Alignment="CenterLeft" >
+				<Scaling ux:Name="backScaling" Factor="1" />
+				<Image File="../Assets/Icons/back.png" Height="40" Width="80" />
+				<Clicked>
+                    <Callback Handler="{selectBack}"/>
+                    <Change backScaling.Factor="0.8" Duration="0.1" Easing="CircularInOut" />
+                </Clicked>
+			</Panel>
+            </Panel>
+		</StackPanel>
+
+        <!--Images-->
+				<ScrollView>
+					<Panel Alignment="Top">
+						<ColumnLayout ColumnCount="2" />
+						<Each Items="{pictures}">
+							<Rectangle Margin="3" Background="#eee" ux:Name="entry" CornerRadius="5">
+								<Scaling ux:Name="entryScaling" Factor="1" />
+								<LayoutAnimation>
+									<Move RelativeTo="LayoutChange" X="1" Y="1" Duration="0.3" Easing="CircularInOut" />
+								</LayoutAnimation>
+
+								<DropShadow Angle="90" />
+								<Panel Background="#333" Margin="3">	
+									<Image ux:Name="picture" StretchMode="UniformToFill" File="{resource}" >
+										<Clicked>
+											<Change entryScaling.Factor="0.95" Duration="0.1" Easing="CircularInOut" />
+											<Callback Handler="{selectImage}" />
+										</Clicked>
+									</Image>
+								</Panel>
+							</Rectangle>
+						</Each>
+					</Panel>
+				</ScrollView>
+
+        <!--<BottomPanel/>-->
+    </DockPanel>
+</Page>

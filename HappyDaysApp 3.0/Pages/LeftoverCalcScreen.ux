@@ -1,0 +1,41 @@
+<Page ux:Class="LeftoverCalcScreen">
+    <Router ux:Dependency="router" />
+    <JavaScript File="LeftoverCalcScreen.js" />
+
+        <!--Top panel-->
+    <StackPanel>
+        <BackgroundColor/>
+        
+		<Panel Height="40" Alignment="Top" Margin="20" >
+			<Text Value="Restekalkulator" Color="#fff" Alignment="Center" FontSize="25" />
+		</Panel>
+        <Panel>
+        <Rectangle Color="#FFFFFF">
+            <Stroke Width="3" Color="#000000"/>
+            <TextBox TextAlignment="Center" PlaceholderText="Søk" />  
+            </Rectangle>
+        
+        </Panel>
+        <Panel Height="470" Margin="1,1,1,1">
+            <Rectangle Color="#FFFFFF">
+            <Stroke Width="2" Color="#000000"/>
+            <StackPanel Orientation="Vertical" Margin="3,3,3,3">
+                <Text Value="Poteter" FontSize="20" />
+                <Text Value="Ost" FontSize="20"/>
+                
+            
+            </StackPanel>
+            
+
+<!-- Image icons-->
+				<Grid ColumnCount="5" Margin="20" Alignment="Bottom" Clicked="{goToLeftover}">
+					<Text Value="" />
+					<Text Value="" />
+					<Text Value="" />
+					<Text Value="" />
+					<Image File="../Assets/Icons/BlackCheckmark.png" Width="40" Height="40" Alignment="BottomRight"  />
+				</Grid>
+</Rectangle>
+        </Panel>
+    </StackPanel>
+</Page>

@@ -1,0 +1,67 @@
+<Page ux:Class="FavoriteScreen">
+    <Router ux:Dependency="router" />
+    <JavaScript File="FavoriteScreen.js" />
+
+	<!--Top panel-->
+	<BackgroundColor/>	
+<DockPanel>
+
+		
+		<!--Top panel-->
+			<StackPanel Dock="Top"  >
+
+		
+			<Panel Height="40" Alignment="Top" Margin="20" >
+			<Text Value="Favoritter" Color="#fff" Alignment="Center" FontSize="25" />
+			<Panel Alignment="TopRight">
+			<Scaling ux:Name="deleteScaling" Factor="1" />
+						<Image File="../Assets/Icons/delete.png" Height="80" Width="40">
+							<Clicked>
+								<Change deleteScaling.Factor="0.8" Duration="0.1" Easing="CircularInOut" />
+								<Callback Handler="{deleteSelected}"/>
+							</Clicked>
+						</Image>
+						
+					</Panel>
+					</Panel>
+		</StackPanel>
+			
+			<BottomFrameBackground Dock="Bottom" />
+			
+			<!--Images-->
+				<ScrollView>
+					<Panel Alignment="Top">
+						<ColumnLayout ColumnCount="2" />
+						<Each Items="{pictures}">
+							<Rectangle Margin="3" Background="#eee" ux:Name="entry" CornerRadius="5">
+								<Scaling ux:Name="entryScaling" Factor="1" />
+								<LayoutAnimation>
+									<Move RelativeTo="LayoutChange" X="1" Y="1" Duration="0.3" Easing="CircularInOut" />
+								</LayoutAnimation>
+
+								<DropShadow Angle="90" />
+								<Panel Background="#333" Margin="3">	
+									<Image ux:Name="picture" StretchMode="UniformToFill" File="{resource}" >
+										<Tapped>
+											<Change entryScaling.Factor="0.95" Duration="0.1" Easing="CircularInOut" />
+											<Callback Handler="{goToRecipe}" />
+											<Callback Handler="{toggleSelect}"/>
+										</Tapped>
+
+										<LongPressed>
+											<Callback Handler="{goToDeleteMode}"/>
+										</LongPressed>
+										<WhileTrue Value="{isSelected}">
+											<Change picture.Opacity="0.6" />
+										</WhileTrue>
+
+								
+									</Image>
+								</Panel>
+							</Rectangle>
+						</Each>
+					</Panel>
+				</ScrollView>
+			
+		</DockPanel>
+</Page>

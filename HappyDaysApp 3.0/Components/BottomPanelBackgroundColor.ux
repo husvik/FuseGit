@@ -1,0 +1,5 @@
+<!--BottompanelBackground color-->
+		<LinearGradient ux:Class="BottomPanelBackgroundColor" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Offset="0" Color="#007250" />
+            <GradientStop Offset="1" Color="#007250" />
+        </LinearGradient>

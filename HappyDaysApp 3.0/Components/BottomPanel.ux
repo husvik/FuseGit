@@ -1,0 +1,61 @@
+<!--BottomPanel.ux-->
+
+
+
+<Panel ux:Class="BottomPanel" Visibility="{visVar}">
+<Grid  ColumnCount="4" Height="35" Alignment="Bottom" Margin="20"> 
+
+            <Image File="../Assets/Icons/shadowHome.PNG">
+                <Scaling ux:Name="homeScaling" Factor="1" />
+                    <Clicked>
+                        <Callback Handler="{goToMain}"/>
+                            <Change homeScaling.Factor="0.8" Duration="0.1" Easing="CircularInOut" />
+                    
+                    </Clicked>
+                
+            </Image>
+            <Image File="../Assets/Icons/shadowList.PNG">
+                <Scaling ux:Name="listScaling" Factor="1" />
+                    <Clicked>
+                        <Callback Handler="{goToShopList}"/>
+                            <Change listScaling.Factor="0.8" Duration="0.1" Easing="CircularInOut" />
+                    
+                    </Clicked>
+                
+            </Image>
+            <Image File="../Assets/Icons/shadowHeartFull.png">
+                <Scaling ux:Name="favScaling" Factor="1" />
+                    <Clicked>
+                        <Callback Handler="{goToFavorite}"/>
+                            <Change favScaling.Factor="0.8" Duration="0.1" Easing="CircularInOut" />
+                    
+                    </Clicked>
+                
+            </Image>
+            <Image File="../Assets/Icons/shadowCal.png">
+                <Scaling ux:Name="calcScaling" Factor="1" />
+                    <Clicked>
+                        <Callback Handler="{goToLeftoverCalc}"/>
+                            <Change calcScaling.Factor="0.8" Duration="0.1" Easing="CircularInOut" />
+                    
+                    </Clicked>
+                
+            </Image>
+           
+            <!--<Image File="../Assets/Icons/shadowList.PNG" Clicked="{goToShopList}" />
+            <Image File="../Assets/Icons/shadowHeartFull.png" Clicked="{goToFavorite}"/>
+            <Image File="../Assets/Icons/shadowCal.PNG" Clicked="{goToLeftoverCalc}" />  -->      
+</Grid>
+
+<Grid  ColumnCount="4" Height="35" Alignment="Bottom" Margin="20"> 
+
+            <Rectangle Width="50" Height="50" Color="Black" Opacity="0.3" CornerRadius="10" Visibility="{displayHome}" />
+            <Rectangle Width="50" Height="50" Color="Black" Opacity="0.3" CornerRadius="10" Visibility="{displayShopList}" />
+            <Rectangle Width="50" Height="50" Color="Black" Opacity="0.3" CornerRadius="10" Visibility="{displayFavorite}" />
+            <Rectangle Width="50" Height="50" Color="Black" Opacity="0.3" CornerRadius="10" Visibility="{displayCalc}" />
+                
+                   
+</Grid>
+
+
+</Panel>

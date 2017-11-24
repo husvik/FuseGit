@@ -1,0 +1,17 @@
+.uno/CodeCompletion/ux13/MainView.g.uno
+.uno/CodeCompletion/ux13/BackgroundColor.g.uno
+.uno/CodeCompletion/ux13/BottomPanel.g.uno
+.uno/CodeCompletion/ux13/BottomPanelBackgroundColor.g.uno
+.uno/CodeCompletion/ux13/FavoriteScreen.g.uno
+.uno/CodeCompletion/ux13/HomeScreen.g.uno
+.uno/CodeCompletion/ux13/Card.g.uno
+.uno/CodeCompletion/ux13/IntroScreen.g.uno
+.uno/CodeCompletion/ux13/BackgroundImage.g.uno
+.uno/CodeCompletion/ux13/LeftoverCalcScreen.g.uno
+.uno/CodeCompletion/ux13/LeftoverScreen.g.uno
+.uno/CodeCompletion/ux13/RecipeScreen.g.uno
+.uno/CodeCompletion/ux13/TextRecipe.g.uno
+.uno/CodeCompletion/ux13/PanelRecipe.g.uno
+.uno/CodeCompletion/ux13/TextRecipeHeading.g.uno
+.uno/CodeCompletion/ux13/ShopListScreen.g.uno
+.uno/CodeCompletion/ux13/HappyDaysApp.unoproj.g.uno

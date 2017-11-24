@@ -1,0 +1,78 @@
+<Page ux:Class="HomeScreen" Opacity="1">
+
+<Router ux:Dependency="router" />
+<JavaScript File="HomeScreen.js" />  
+    <ClientPanel>
+        <BackgroundColor />
+
+        <!--Top panel-->
+		<Panel Height="40" Alignment="Top" Margin="20">
+			<Text Value="HappyDays" Color="#fff" Alignment="Center" FontSize="25" />
+		</Panel>
+
+        <!--<BottomPanel/>-->
+
+        <Panel ux:Class="Card" Opacity="0.4" >
+			<Scaling ux:Name="pageScaling" Factor="1.5" />
+
+		<!--Swiping animation-->
+			<ActivatingAnimation>
+				<Change this.Opacity="1" Duration="0.5" />
+				<Change pageScaling.Factor="1.5" Duration="0.5" />
+			</ActivatingAnimation>
+			<EnteringAnimation Scale="0.5">
+				<Move X="-1.4" RelativeTo="ParentSize" Duration="0.5" />
+			</EnteringAnimation>
+			<ExitingAnimation Scale="0.5">
+				<Move X="1.4" RelativeTo="ParentSize" Duration="0.5" />
+			</ExitingAnimation>
+
+            <!--Image shadow layer-->
+			<Panel ux:Name="topPanel" Width="60%" Height="50%" Clicked="{goToRecipe}">
+				<Rectangle CornerRadius="5" Layer="Background">
+					<LinearGradient StartPoint="0,0" EndPoint="0,1">
+						<GradientStop Offset="0" Color="#000000" />
+						<GradientStop Offset="0.25" Color="#0000" />
+						<GradientStop Offset="0.7" Color="#0000" />
+						<GradientStop Offset="0.85" Color="#0007" />
+						<GradientStop Offset="1" Color="#0007" />
+					</LinearGradient>
+				</Rectangle>
+
+				<!--Image text-->
+				<Text Value="{item.name}" FontSize="24" Color="#ddd" Alignment="HorizontalCenter" Margin="10">
+					<Shadow Mode="PerPixel" />
+				</Text>
+
+				<!-- Image icons-->
+				<Grid ColumnCount="5" Margin="10" Alignment="Bottom">
+					<Image File="../Assets/Icons/emptyhearth.png" Width="20" Height="20"  />
+					<Text Value="" />
+					<Text Value="" />
+					<Text Value="{item.time}" FontSize="12" Color="#fff" Alignment="CenterRight" />
+					<Image File="../Assets/Icons/time.png" Width="20" Height="20"  />
+				</Grid>
+
+				<!--Image properties-->
+				<Rectangle ux:Name="topPanelRect" Layer="Background" CornerRadius="5" >
+					<ImageFill File="{item.image}" StretchMode="UniformToFill" WrapMode="ClampToEdge" />
+					<Shadow />
+				</Rectangle>
+
+			</Panel>
+
+			
+		</Panel>
+
+		<Panel>
+			<PageControl InactiveState="Unchanged" Transition="None">
+				<NavigationMotion GotoEasing="QuadraticOut" GotoDuration="0.3" />
+				<Each Items="{pagesView}">
+					<Card />
+				</Each>
+			</PageControl>
+		</Panel>
+    
+    </ClientPanel>
+    <Shadow Color="#020000" />
+</Page>

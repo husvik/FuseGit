@@ -1,0 +1,27 @@
+
+<App>
+	<Router ux:Name="router" />
+	<JavaScript File="BottomPanel.js" />
+
+
+	<DockPanel>
+		<Navigator DefaultPath="introScreen">
+			
+            <LeftoverCalcScreen ux:Template="leftoverCalcScreen" router="router"/>
+			
+			<HomeScreen ux:Template="mainScreen" router="router" />
+			<FavoriteScreen ux:Template="favoriteScreen" router="router"/>
+			<ShopListScreen ux:Template="shopListScreen" router="router"/>
+			
+			<IntroScreen ux:Template="introScreen" router="router"/>
+			<RecipeScreen ux:Template="recipeScreen" router="router"/>
+			<LeftoverScreen ux:Template="leftoverScreen" router="router"/>
+			
+
+		</Navigator>
+		<BottomPanelBackgroundColor/>
+		<BottomPanel Dock="Bottom"/>
+	</DockPanel>
+
+
+</App>

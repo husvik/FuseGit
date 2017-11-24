@@ -1,0 +1,137 @@
+<Page ux:Class="RecipeScreen">
+    <Router ux:Dependency="router" />
+
+    <JavaScript File="RecipeScreen.js"/>
+
+    <JavaScript>
+        var pages = this.Parameter;
+    
+        module.exports = {
+            pages: pages
+        };
+    </JavaScript>
+        
+    <Text ux:Class="TextRecipe" Color="Black" FontSize="15"/>
+    <StackPanel ux:Class="PanelRecipe" Margin="5,5,5,5" Alignment="TopLeft" />
+    <Text ux:Class="TextRecipeHeading" Alignment="CenterLeft" Color="#FFFFFF" FontSize="20" />
+    <DockPanel Height="100%" >
+
+    <BackgroundColor/>
+
+        <!--Top panel-->
+        <StackPanel Dock="Top">
+        
+            <Panel Height="40" Alignment="Top" Margin="20" >
+			    <Text Value="Oppskrift" Color="#fff" Alignment="Center" FontSize="25" />
+                <Panel Alignment="CenterLeft" >
+                <Scaling ux:Name="backScaling" Factor="1" />
+				<Image File="../Assets/Icons/back.png" Height="40" Width="80" />
+                <Clicked>
+                    <Callback Handler="{selectBack}"/>
+                    <Change backScaling.Factor="0.8" Duration="0.1" Easing="CircularInOut" />
+                </Clicked>
+			</Panel>
+		   </Panel>
+		
+            <Panel Alignment="Top" Margin="0, 0, 0, 0">
+                    <!-- Image icons-->
+				<Grid ColumnCount="5" Margin="5" Alignment="Bottom">
+					<Image File="../Assets/Icons/emptyhearth.png" Width="30" Height="30" />
+					<Text Value="" />
+					<Text Value="" />
+					<Text Value="" />
+					<Image File="../Assets/Icons/list.png" Width="30" Height="30"  />
+				</Grid>
+                <Rectangle >
+                    <LinearGradient StartPoint="0,0" EndPoint="0,1">
+						<GradientStop Offset="0" Color="#0000" />
+						<GradientStop Offset="0.25" Color="#0000" />
+						<GradientStop Offset="0.7" Color="#0000" />
+						<GradientStop Offset="0.85" Color="#0007" />
+						<GradientStop Offset="1" Color="#0008" />
+					</LinearGradient>
+                </Rectangle>
+					
+				
+				
+                
+                
+                <Image StretchMode="Fill" File="../Assets/AsianSoup2.png" />
+
+                
+            </Panel>
+            
+                
+            
+
+
+        </StackPanel>
+
+        <BottomFrameBackground Dock="Bottom" />
+
+       
+
+
+        <ScrollView>
+            <StackPanel Margin="5, 10, 5, 0">
+           
+                
+                <!--Ingredienser Textbox-->
+                <Panel>
+                    <TextRecipeHeading Value="Ingredienser" />
+                </Panel>
+                    <Panel Color="#FFFFFF" >
+                        <Rectangle Layer="Background">
+                            <Stroke Width="3" Color="#FFFFFF" />
+                        </Rectangle>
+                        
+                        
+                            <PanelRecipe>
+                            
+                                <TextRecipe Value="3 røde paprika" />
+                                <TextRecipe Value="1-2 røde chili" />
+                                <TextRecipe Value="1 mango"  />
+                                <TextRecipe Value="2 vårløk"  />
+                                <TextRecipe Value="4 ss olivenolje"  />
+                                <TextRecipe Value="1 lime"/>
+                                <TextRecipe Value="1 ss balsamicoeddik" />
+                                <TextRecipe Value="Hakket frisk koriander" />
+                                <TextRecipe Value="Salt og kvernet pepper" />
+                            </PanelRecipe>
+                        
+                    </Panel>
+
+                <!--Tilberedning Textbox-->
+                    <Panel Margin="0,10,0,0">
+                        <TextRecipeHeading Value="Tilberedning" />
+                    </Panel>
+
+                    <Panel Color="#FFFFFF">
+
+                        <Rectangle Layer="Background">
+                            <Stroke Width="3" Color="#FFFFFF" />
+                        </Rectangle>
+                        
+                            <PanelRecipe>
+                                <TextRecipe Value="1. Grill paprika og chili i en grillpanne eller under grill i ovn til skinnet er helt svart" TextWrapping="Wrap" />
+                                <TextRecipe Value="2.  Legg alt over i en bolle (eller lignende), dekk bollen med plastfolie og la grønnsakene ligge slik til de har blitt litt avkjølt, ca. 10 minutter."  TextWrapping="Wrap" />
+                                <TextRecipe Value="3. Fjern skinn og kjerner og skjær paprika og chili i små biter"  TextWrapping="Wrap" />
+                                <TextRecipe Value="4. Skrell og skjær mangoen i små terninger og finsnitt vårløken"  TextWrapping="Wrap" />
+                                <TextRecipe Value="5. Bland sammen paprika, chili, mango og vårløk"  TextWrapping="Wrap" />
+                                <TextRecipe Value="6. Tilsett olivenolje, limesaft og balsamicoeddik"  TextWrapping="Wrap" />
+                                <TextRecipe Value="7. Smak salsaen til med salt og pepper og bland til slutt inn hakket koriander"  TextWrapping="Wrap" />
+                            </PanelRecipe>
+                        
+                    </Panel>
+                
+            </StackPanel>
+        </ScrollView> 
+
+</DockPanel>
+    
+</Page>
+
+
+
+ 
+     

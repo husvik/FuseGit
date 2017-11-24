@@ -1,0 +1,42 @@
+<Page ux:Class="IntroScreen" Clicked="{goToMain}">
+
+    <Router ux:Dependency="router" />
+    <!--<JavaScript File="FavoriteScreen.js" />-->
+<DockPanel>
+
+		<Image ux:Class="BackgroundImage" StretchMode="UniformToFill" />
+
+		<DockPanel>
+			<PageControl ux:Name="slides" ClipToBounds="true">
+
+
+				<Page>
+					<BackgroundImage File="../Assets/intro1.jpg"  />
+				</Page>
+
+				<Page>
+					<BackgroundImage File="../Assets/intro2.jpg" />
+				</Page>
+
+				<Page>
+					<BackgroundImage File="../Assets/intro3.jpg" />
+				</Page>
+
+			</PageControl>
+			
+		</DockPanel>
+        <PageIndicator ZOffset="1.0" Alignment="BottomCenter" Margin="0,0,0,30" Navigation="slides">
+				<Circle ux:Template="Dot" Width="20" Height="20"  Margin="6">
+					<SolidColor ux:Name="dotStrokeBody" Color="#0000" />
+					<Stroke ux:Name="dotStroke" Width="2">
+						<SolidColor ux:Name="dotStrokeColor" Color="#fff" />
+					</Stroke>
+					<ActivatingAnimation>
+						<Change dotStrokeBody.Color="#fff" />
+						<Change dotStrokeColor.Color="#fff" />
+					</ActivatingAnimation>
+				</Circle>
+			</PageIndicator>
+	</DockPanel>
+
+</Page>

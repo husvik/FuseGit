@@ -1,0 +1,29 @@
+<Page ux:Class="ShopListScreen">
+
+<Router ux:Dependency="router" />
+  
+    <ClientPanel>
+        <BackgroundColor/>
+
+        <!--Top panel-->
+		<Panel Height="40" Alignment="Top" Margin="20"  >
+			<Text Value="Handleliste" Color="#fff" Alignment="Center" FontSize="25" />
+		</Panel>
+        
+        <Panel Height="500" Margin="1,70,1,1" Color="#FFFFFF">
+            <Rectangle >
+            <Stroke Width="2" Color="#000000"/>
+            </Rectangle>
+
+            <!-- Image icons-->
+				<Grid ColumnCount="5" Margin="20" Alignment="Bottom">
+					<Image File="../Assets/Icons/shareBlack.png" Width="30" Height="30" />
+					<Text Value="" />
+					<Text Value="" />
+					<Text Value="" />
+					<Image File="../Assets/Icons/trashcanBlack.png" Width="30" Height="30"  />
+				</Grid>
+        </Panel>
+    
+</ClientPanel>
+</Page>
